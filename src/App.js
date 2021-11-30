@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.scss';
-import { Button } from '@patternfly/react-core';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Button variant="primary">Primary</Button>
-        {' '}
-      </header>
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
