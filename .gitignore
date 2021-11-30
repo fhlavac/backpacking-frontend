@@ -1,5 +1,3 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
 # vscode config
 .vscode/
 
@@ -11,6 +9,7 @@ node_modules
 
 # production
 dist
+build
 
 #test coverage statistics
 coverage
@@ -28,5 +27,3 @@ yarn.lock
 
 .DS_Store
 coverage
-
-/build
