@@ -1,6 +1,5 @@
 // import logo from './logo.svg';
 import './App.scss';
-import './style.scss';
 import { Button } from '@patternfly/react-core';
 
 function App() {
