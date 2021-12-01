@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './nav-link.scss';
 
 const NavLink = ({ icon, name }) => (
-  <div style={{ display: 'flex' }}>
-    <img src={icon} alt="" />
-    <span>{name}</span>
+  <div className="c-navLink">
+    <img className="c-navLink__icon" src={icon} alt="" />
+    <span className="c-navLink__name">{name}</span>
   </div>
 );
 
