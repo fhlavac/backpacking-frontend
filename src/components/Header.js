@@ -3,6 +3,8 @@ import {
   Masthead, MastheadMain, MastheadBrand, MastheadContent,
 } from '@patternfly/react-core';
 import logo from '../assets/images/logo.png';
+import gearList from '../assets/icons/gear-list.svg';
+import backpack from '../assets/icons/my-backpack.svg';
 import NavLink from './NavLink';
 
 const Header = () => (
@@ -13,8 +15,8 @@ const Header = () => (
       </MastheadBrand>
     </MastheadMain>
     <MastheadContent style={{ marginLeft: 'auto' }}>
-      <NavLink icon="../assets/icons/gear-list.svg" name="My Gear" />
-      <NavLink icon="../assets/icons/my-backpack.svg" name="My Backpack" />
+      <NavLink icon={gearList} name="My Gear" />
+      <NavLink icon={backpack} name="My Backpack" />
     </MastheadContent>
   </Masthead>
 );
