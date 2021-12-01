@@ -1,6 +1,7 @@
 import { Nav, NavItem, NavList } from '@patternfly/react-core';
 import React, { useEffect, useRef, useState } from 'react';
 import { fetchCategories } from '../api/categories';
+import IconWater from './icons/icon-water';
 import './category-list.scss';
 
 const CategoryList = () => {
@@ -16,6 +17,7 @@ const CategoryList = () => {
       <NavList className="category-list">
         {categories.map(({ id, name }) => (
           <NavItem key={id} to={`category?id=${id}`} isActive={Number(params.current.get('id')) === id}>
+            <IconWater />
             {name.charAt(0).toUpperCase() + name.slice(1)}
           </NavItem>
         ))}

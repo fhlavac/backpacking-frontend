@@ -1,12 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
-  Grid,
-  GridItem,
   Gallery,
   GalleryItem,
+  Page,
+  PageSection,
+  Title,
 } from '@patternfly/react-core';
 import GearItem from './GearItem';
+import IconWater from './icons/icon-water';
 import { fetchGearForCategory } from '../api/gear';
+import './Content.scss';
 // import sample from '../assets/images/sample.png';
 
 const Content = () => {
@@ -40,17 +43,21 @@ const Content = () => {
   }, []);
 
   return (
-    <Grid hasGutter>
-      <GridItem sm={12}>
-        <Gallery hasGutter className="pf-u-m-md">
+    <Page>
+      <PageSection className="app-c-page-section">
+        <Title headingLevel="h2" size="xl" className="app-c-title pf-u-pb-md">
+          <IconWater />
+          Category name
+        </Title>
+        <Gallery hasGutter>
           { gear.map((item) => (
             <GalleryItem key={item.id}>
               <GearItem item={item} />
             </GalleryItem>
           ))}
         </Gallery>
-      </GridItem>
-    </Grid>
+      </PageSection>
+    </Page>
   );
 };
 export default Content;

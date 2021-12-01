@@ -1,6 +1,45 @@
 @import "@patternfly/react-core/dist/styles/base.css";
+@import "~@patternfly/patternfly/utilities/Spacing/spacing.css";
 @import "~@patternfly/patternfly/patternfly-addons.css";
 
 .App {
   // background: red;
+}
+
+.orange-theme {
+  .pf-c-masthead__content {
+    .pf-c-masthead__brand svg {
+      fill: #ff8a00;
+    }
+    .c-NavLink {
+      .c-navLink__name {
+        color: #ff8a00 !important;
+      }
+      .c-navLink__icon {
+        fill: #ff8a00;
+      }
+    }
+  }
+  .pf-c-nav {
+    --pf-c-nav__link--m-current--after--BorderColor: #ff8a00;
+  }
+
+  .app-c-card-gear-item {
+    &__title {
+      // color: #ff8a00;
+    }
+    &__body {
+      .icon-weight {
+        color: #ff8a00;
+        svg {
+          fill: #ff8a00;
+        }
+      }
+    }
+    &__footer {
+      .pf-m-link {
+        color: #ff8a00;
+      }
+    }
+  }
 }

@@ -1,0 +1,28 @@
+.app-c-card-gear-item {
+  &__title {
+    font-size: 18px;
+    color: #4F5255;
+    text-transform: capitalize;
+  }
+  &__body {
+    img {
+      max-width: 60%;
+    }
+    .icon-weight {
+      color: #2B9AF3;
+      svg {
+        fill: #2B9AF3 ;
+        margin-right: 4px;
+        width: 16px;
+      }
+    }
+    .description {
+      color: gray;
+    }
+  }
+  &__footer {
+    background-color: #FAFAFA;
+    button {
+    }
+  }
+}

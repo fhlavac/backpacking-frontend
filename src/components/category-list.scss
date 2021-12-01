@@ -2,4 +2,8 @@
     width: 15em;
     background: var(--pf-global--BackgroundColor--dark-300);
     height: 89vh;
+    svg {
+      height: .9em;
+      margin-right: 4px;
+    }
 }

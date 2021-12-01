@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Masthead, MastheadMain, MastheadBrand, MastheadContent,
 } from '@patternfly/react-core';
-import logo from '../assets/images/logo.svg';
+import logo from '../assets/images/brand.png';
 import gearList from '../assets/icons/gear-list.svg';
 import backpack from '../assets/icons/my-backpack.svg';
 import NavLink from './NavLink';
