@@ -29,7 +29,7 @@ const Content = () => {
   return (
     <Grid hasGutter>
       <GridItem sm={12}>
-        <Gallery hasGutter style={{ padding: '15px' }}>
+        <Gallery hasGutter className="pf-u-m-md">
           { items.map((item) => (
             <GalleryItem key={item.id}>
               <GearItem item={item} />
