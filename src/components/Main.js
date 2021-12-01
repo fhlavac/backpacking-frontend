@@ -1,8 +1,11 @@
 import React from 'react';
+import CategoryList from './CategoryList';
+import Content from './Content';
 
 const Main = () => (
   <>
-    main section
+    <CategoryList />
+    <Content />
   </>
 );
 export default Main;
