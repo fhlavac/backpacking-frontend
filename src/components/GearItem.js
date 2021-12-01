@@ -5,7 +5,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import sample from '../assets/images/sample.png';
 
-const GearItem = ({ name }) => (
+const GearItem = ({ item: { name } }) => (
   <Card>
     <CardHeader>
       <CardHeaderMain>
@@ -20,7 +20,9 @@ const GearItem = ({ name }) => (
 );
 
 GearItem.propTypes = {
-  name: propTypes.string.isRequired,
+  item: propTypes.shape({
+    name: propTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default GearItem;

@@ -1,16 +1,21 @@
 import React from 'react';
 import './App.scss';
+import { Stack, StackItem } from '@patternfly/react-core';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import Placeholder from './components/Placeholder';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Main />
-      <Placeholder />
+      <Stack>
+        <StackItem>
+          <Header />
+        </StackItem>
+        <StackItem isFilled>
+          <Main />
+        </StackItem>
+      </Stack>
       <Footer />
     </div>
   );

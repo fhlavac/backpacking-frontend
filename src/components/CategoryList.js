@@ -1,9 +1,10 @@
 import { Nav, NavItem, NavList } from '@patternfly/react-core';
 import React from 'react';
+import './category-list.scss';
 
 const CategoryList = () => (
   <Nav>
-    <NavList>
+    <NavList class="category-list">
       <NavItem id="default-link1" to="#default-link1" itemId={0} isActive>
         Link 1
       </NavItem>
