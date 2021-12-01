@@ -29,9 +29,9 @@ const Content = () => {
   return (
     <Grid hasGutter>
       <GridItem sm={12}>
-        <Gallery hasGutter>
+        <Gallery hasGutter style={{ padding: '15px' }}>
           { items.map((item) => (
-            <GalleryItem>
+            <GalleryItem key={item.id}>
               <GearItem item={item} />
             </GalleryItem>
           ))}

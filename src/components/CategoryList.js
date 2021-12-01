@@ -1,24 +1,27 @@
 import { Nav, NavItem, NavList } from '@patternfly/react-core';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { fetchCategories } from '../api/categories';
 import './category-list.scss';
 
-const CategoryList = () => (
-  <Nav>
-    <NavList class="category-list">
-      <NavItem id="default-link1" to="#default-link1" itemId={0} isActive>
-        Link 1
-      </NavItem>
-      <NavItem id="default-link2" to="#default-link2" itemId={1}>
-        Link 2
-      </NavItem>
-      <NavItem id="default-link3" to="#default-link3" itemId={2}>
-        Link 3
-      </NavItem>
-      <NavItem id="default-link4" to="#default-link4" itemId={3}>
-        Link 4
-      </NavItem>
-    </NavList>
-  </Nav>
-);
+const CategoryList = () => {
+  const [categories, setCategories] = useState([]);
+  const params = useRef((new URL(document.location)).searchParams);
+
+  useEffect(() => {
+    fetchCategories().then((data) => setCategories(data));
+  }, []);
+
+  return (
+    <Nav>
+      <NavList className="category-list">
+        {categories.map(({ id, name }) => (
+          <NavItem key={id} to={`category?id=${id}`} isActive={Number(params.current.get('id')) === id}>
+            {name.charAt(0).toUpperCase() + name.slice(1)}
+          </NavItem>
+        ))}
+      </NavList>
+    </Nav>
+  );
+};
 
 export default CategoryList;

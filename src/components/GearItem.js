@@ -3,13 +3,13 @@ import {
 } from '@patternfly/react-core';
 import React from 'react';
 import propTypes from 'prop-types';
-import sample from '../assets/images/sample.png';
+import { API_SERVER_URL } from '../config/config';
 
 const GearItem = ({ item: { name } }) => (
   <Card>
     <CardHeader>
       <CardHeaderMain>
-        <img src={sample} alt="A sample gear item" style={{ objectFit: 'cover' }} />
+        <img src={`${API_SERVER_URL}/sample.png`} alt={name} style={{ objectFit: 'cover' }} />
       </CardHeaderMain>
     </CardHeader>
     <CardTitle>{name}</CardTitle>
