@@ -11,7 +11,8 @@ import {
   PageSection,
   PageSectionVariants,
 } from '@patternfly/react-core';
-import image from '../assets/images/placeholder.png';
+import imageleft from '../assets/images/placeholder.png';
+import imageright from '../assets/images/placeholder-right.png';
 
 const HomeScreen = () => (
   <Page>
@@ -23,10 +24,17 @@ const HomeScreen = () => (
               minHeight: '800px',
               backgroundPosition: 'center',
               backgroundSize: 'cover',
-              backgroundImage: `url(${image})`,
+              backgroundImage: `url(${imageleft})`,
             }}
           />
-          <GridItem>
+          <GridItem
+            style={{
+              minHeight: '800px',
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundImage: `url(${imageright})`,
+            }}
+          >
             <CardTitle>
               Our Backpacking App
               <br />
@@ -39,6 +47,10 @@ const HomeScreen = () => (
               This application should serve as a catalog of outdoor equipment,
               which will allow you to combine the necessary equipment appropriately to
               both avoid carrying extra weight and forgetting essentials at home.
+              <br />
+              <br />
+              <br />
+              <br />
             </CardBody>
             <CardBody>
               <Button variant="tertiary" isBlock>View My Gear</Button>
