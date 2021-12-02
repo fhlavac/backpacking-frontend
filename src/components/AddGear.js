@@ -1,6 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import {
+  ActionGroup,
+  Button,
   Dropdown,
   DropdownToggle,
   FileUpload,
@@ -9,6 +11,7 @@ import {
   Page,
   PageSection,
   PageSectionVariants,
+  Switch,
   Title,
   Form, FormGroup, TextInput,
 } from '@patternfly/react-core';
@@ -56,6 +59,17 @@ const AddGear = () => (
               )}
             />
           </FormGroup>
+          <FormGroup label="Add to backpack">
+            <Switch
+              id="simple-switch"
+              label=""
+              labelOff=""
+            />
+          </FormGroup>
+          <ActionGroup>
+            <Button variant="primary">Save</Button>
+            <Button variant="disabled">Clear</Button>
+          </ActionGroup>
         </Grid>
       </Form>
     </PageSection>

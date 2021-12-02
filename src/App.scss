@@ -31,6 +31,15 @@
       background-color: #ff8a00;
     }
   }
+
+  .pf-c-button.pf-m-primary {
+    background-color: #ff8a00 !important;
+  }
+
+  .pf-c-switch__input:checked, .pf-c-switch__toggle {
+    background-color: #ff8a00 !important;
+  }
+
   .app-c-card-gear-item {
     &__title {
       // color: #ff8a00;
