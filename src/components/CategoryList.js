@@ -19,6 +19,13 @@ const CategoryList = ({ categories }) => {
     <>
       <Nav>
         <NavList className="category-list">
+          <NavItem>
+            <Link
+              to="/home-screen"
+            >
+              Home
+            </Link>
+          </NavItem>
           {categories.map(({ id, name }) => (
             <NavItem
               key={id}

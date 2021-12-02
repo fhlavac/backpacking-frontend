@@ -21,7 +21,7 @@ const HomeScreen = () => (
         <Grid md={6}>
           <GridItem
             style={{
-              minHeight: '800px',
+              minHeight: '550px',
               backgroundPosition: 'center',
               backgroundSize: 'cover',
               backgroundImage: `url(${imageleft})`,
@@ -29,7 +29,7 @@ const HomeScreen = () => (
           />
           <GridItem
             style={{
-              minHeight: '800px',
+              minHeight: '700px',
               backgroundPosition: 'center',
               backgroundSize: 'cover',
               backgroundImage: `url(${imageright})`,
