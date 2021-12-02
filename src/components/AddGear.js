@@ -5,12 +5,15 @@ import {
   DropdownToggle,
   FileUpload,
   Grid,
+  NumberInput,
   Page,
   PageSection,
   PageSectionVariants,
   Title,
   Form, FormGroup, TextInput,
 } from '@patternfly/react-core';
+
+import './AddGear.scss';
 
 const AddGear = () => (
   <Page>
@@ -27,10 +30,16 @@ const AddGear = () => (
           <FormGroup label="Description">
             <TextInput />
           </FormGroup>
-          <FormGroup label="Weight (grams)">
-            <TextInput />
+          <FormGroup label="Weight">
+            <NumberInput
+              value="1"
+              inputName="input 1"
+              inputAriaLabel="number input 1"
+              minusBtnAriaLabel="minus 1"
+              plusBtnAriaLabel="plus 1"
+              unit="grams"
+            />
           </FormGroup>
-          <br />
           <FormGroup label="Upload gear photo">
             <FileUpload
               type="text"
