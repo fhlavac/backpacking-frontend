@@ -22,7 +22,8 @@
   }
   &__footer {
     background-color: #FAFAFA;
-    button {
+    .button-delete {
+      color: gray !important;
     }
   }
 }

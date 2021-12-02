@@ -27,8 +27,8 @@ const GearItem = ({ item, onAdd, onRemove }) => (
     </CardBody>
     <CardFooter className="pf-u-p-xs app-c-card-gear-item__footer">
       { /* TODO - display only appropriate button acccording to redux state */ }
-      <Button variant="link" isSmall onClick={() => onRemove(item.id)}><TrashIcon /></Button>
-      <Button variant="link" isSmall onClick={() => onAdd(item)} className="pf-u-float-right">Add to backpack</Button>
+      <Button variant="link" isSmall onClick={() => onRemove(item.id)} className="button-delete"><TrashIcon /></Button>
+      <Button variant="link" isSmall onClick={() => onAdd(item)} className="pf-u-float-right button-add">Add to backpack</Button>
     </CardFooter>
   </Card>
 );
