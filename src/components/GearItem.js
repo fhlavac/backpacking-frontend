@@ -3,6 +3,7 @@ import {
 } from '@patternfly/react-core';
 import React from 'react';
 import propTypes from 'prop-types';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import { API_SERVER_URL } from '../config/config';
 import IconWeight from './icons/icon-weight';
 import './GearItem.scss';
@@ -26,8 +27,8 @@ const GearItem = ({ item, onAdd, onRemove }) => (
     </CardBody>
     <CardFooter className="pf-u-p-xs app-c-card-gear-item__footer">
       { /* TODO - display only appropriate button acccording to redux state */ }
+      <Button variant="link" isSmall onClick={() => onRemove(item.id)}><TrashIcon /></Button>
       <Button variant="link" isSmall onClick={() => onAdd(item)} className="pf-u-float-right">Add to backpack</Button>
-      <Button variant="link" isSmall onClick={() => onRemove(item.id)} className="pf-u-float-right">Remove</Button>
     </CardFooter>
   </Card>
 );
