@@ -67,7 +67,7 @@ const CategoryDetail = () => {
           <EmptyStateBody>
             You have no gear in this category.
           </EmptyStateBody>
-          <Button variant="primary">Add gear</Button>
+          <Button variant="disabled">Add gear</Button>
         </EmptyState>
 
       </PageSection>
