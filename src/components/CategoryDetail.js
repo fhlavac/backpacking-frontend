@@ -10,33 +10,21 @@ import {
   EmptyStateBody,
   Title,
 } from '@patternfly/react-core';
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import GearItem from './GearItem';
 import IconHiking from './icons/icon-hiking';
 import { fetchGearForCategory } from '../api/gear';
 import './CategoryDetail.scss';
 
-const CategoryDetail = () => {
-  // const gear = [
-  //   {
-  //     id: 8,
-  //     name: 'sandals',
-  //     weight: 0.8,
-  //     imageUrl: null,
-  //     categoryId: 21,
-  //   },
-  //   {
-  //     id: 9,
-  //     name: 'socks',
-  //     weight: 0.1,
-  //     imageUrl: null,
-  //     categoryId: 21,
-  //   },
-  // ];
+const selector = (state) => state;
 
+const CategoryDetail = () => {
   const [gear, setGear] = useState([]);
   const history = useHistory();
   const { id } = useParams();
+  const state = useSelector(selector, shallowEqual);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (id) {
@@ -45,6 +33,16 @@ const CategoryDetail = () => {
       setGear([]);
     }
   }, [history.location]);
+
+  console.log('state', state);
+
+  const addItem = (item) => {
+    dispatch({ type: 'ADD_TO_BACKPACK', payload: item });
+  };
+
+  const removeItem = (gearId) => {
+    dispatch({ type: 'REMOVE_FROM_BACKPACK', payload: gearId });
+  };
 
   return (
     <Page>
@@ -55,7 +53,7 @@ const CategoryDetail = () => {
         <Gallery hasGutter>
           { gear.map((item) => (
             <GalleryItem key={item.id}>
-              <GearItem item={item} />
+              <GearItem item={item} onAdd={addItem} onRemove={removeItem} />
             </GalleryItem>
           ))}
         </Gallery>

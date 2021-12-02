@@ -7,12 +7,12 @@ import { API_SERVER_URL } from '../config/config';
 import IconWeight from './icons/icon-weight';
 import './GearItem.scss';
 
-const GearItem = ({ item: { name } }) => (
+const GearItem = ({ item, onAdd, onRemove }) => (
   <Card className="app-c-card-gear-item">
-    <CardTitle headingLevel="h1" size="xl" className="app-c-card-gear-item__title pf-u-text-align-center pf-u-p-md">{name}</CardTitle>
+    <CardTitle headingLevel="h1" size="xl" className="app-c-card-gear-item__title pf-u-text-align-center pf-u-p-md">{item.name}</CardTitle>
     <CardBody className="app-c-card-gear-item__body">
       <Bullseye>
-        <img src={`${API_SERVER_URL}/sample.png`} alt={name} />
+        <img src={`${API_SERVER_URL}/sample.png`} alt={item.name} />
       </Bullseye>
     </CardBody>
     <CardBody className="app-c-card-gear-item__body">
@@ -25,15 +25,20 @@ const GearItem = ({ item: { name } }) => (
       </p>
     </CardBody>
     <CardFooter className="pf-u-p-xs app-c-card-gear-item__footer">
-      <Button variant="link" isSmall className="pf-u-float-right">Add to backpack</Button>
+      { /* TODO - display only appropriate button acccording to redux state */ }
+      <Button variant="link" isSmall onClick={() => onAdd(item)} className="pf-u-float-right">Add to backpack</Button>
+      <Button variant="link" isSmall onClick={() => onRemove(item.id)} className="pf-u-float-right">Remove</Button>
     </CardFooter>
   </Card>
 );
 
 GearItem.propTypes = {
   item: propTypes.shape({
+    id: propTypes.number.isRequired,
     name: propTypes.string.isRequired,
   }).isRequired,
+  onAdd: propTypes.func.isRequired,
+  onRemove: propTypes.func.isRequired,
 };
 
 export default GearItem;
