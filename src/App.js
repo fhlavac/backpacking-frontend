@@ -12,6 +12,7 @@ import CategoryDetail from './components/CategoryDetail';
 import { fetchCategories } from './api/categories';
 import MyBackpack from './components/MyBackpack';
 import AddGear from './components/AddGear';
+import HomeScreen from './components/HomeScreen';
 
 export default function App() {
   const [categories, setCategories] = useState([]);
@@ -45,6 +46,9 @@ export default function App() {
                     </Route>
                     <Route path="/add-gear">
                       <AddGear />
+                    </Route>
+                    <Route path="/home-screen">
+                      <HomeScreen />
                     </Route>
                   </Switch>
                 </SplitItem>

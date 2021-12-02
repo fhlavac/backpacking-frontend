@@ -26,6 +26,19 @@
     --pf-c-nav__link--m-current--after--BorderColor: #ff8a00;
   }
 
+  .app-c-page-home {
+    .pf-c-card__title {
+      color: gray;
+      font-size: 28px;
+      span {
+        font-size: 22px;
+      }
+    }
+    .hackathon {
+      color: #ff8a00;
+    }
+  }
+
   .pf-c-empty-state__content {
     button {
       background-color: #ff8a00;
