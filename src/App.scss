@@ -3,7 +3,9 @@
 @import "~@patternfly/patternfly/patternfly-addons.css";
 
 .App {
-  // background: red;
+  .left-side {
+    background: #212427;
+  }
 }
 
 .orange-theme {

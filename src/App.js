@@ -7,7 +7,6 @@ import {
   BrowserRouter as Router, Switch, Route,
 } from 'react-router-dom';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import CategoryList from './components/CategoryList';
 import CategoryDetail from './components/CategoryDetail';
 import { fetchCategories } from './api/categories';
@@ -31,7 +30,7 @@ export default function App() {
           <StackItem isFilled>
             <div className="main-content">
               <Split>
-                <SplitItem>
+                <SplitItem className="left-side">
                   <CategoryList categories={categories} />
                 </SplitItem>
                 <SplitItem isFilled>
@@ -53,7 +52,6 @@ export default function App() {
             </div>
           </StackItem>
         </Stack>
-        <Footer />
       </div>
     </Router>
   );
