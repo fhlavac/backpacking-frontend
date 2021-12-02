@@ -1,6 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import {
+  Dropdown,
+  DropdownToggle,
   FileUpload,
   Grid,
   Page,
@@ -34,6 +36,15 @@ const AddGear = () => (
               type="text"
               filenamePlaceholder="Drag and drop a file or upload one"
               browseButtonText="Upload"
+            />
+          </FormGroup>
+          <FormGroup label="Category">
+            <Dropdown
+              toggle={(
+                <DropdownToggle isDisabled>
+                  Category
+                </DropdownToggle>
+              )}
             />
           </FormGroup>
         </Grid>
