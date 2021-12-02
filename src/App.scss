@@ -26,6 +26,11 @@
     --pf-c-nav__link--m-current--after--BorderColor: #ff8a00;
   }
 
+  .pf-c-empty-state__content {
+    button {
+      background-color: #ff8a00;
+    }
+  }
   .app-c-card-gear-item {
     &__title {
       // color: #ff8a00;
