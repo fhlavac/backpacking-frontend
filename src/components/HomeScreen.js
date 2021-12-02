@@ -13,6 +13,7 @@ import {
 } from '@patternfly/react-core';
 import imageleft from '../assets/images/placeholder.png';
 import imageright from '../assets/images/placeholder-right.png';
+import logo from '../assets/images/brand-large.png';
 
 const HomeScreen = () => (
   <Page>
@@ -36,7 +37,7 @@ const HomeScreen = () => (
             }}
           >
             <CardTitle>
-              Our Backpacking App
+              <img src={logo} alt="Backpacking Logo" />
               <br />
               <span className="hackathon"> # ConsoleDot Hackathon Q4 2021</span>
             </CardTitle>
