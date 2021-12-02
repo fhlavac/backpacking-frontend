@@ -6,4 +6,16 @@
     padding-right: 6px;
     height: .9em;
   }
+
+  .pf-c-empty-state {
+    background-color: #fff !important;
+  }
+
+  .pf-c-empty-state__content {
+    svg {
+      height: 10em;
+      color:  gray;
+      fill: gray;
+    }
+  }
 }

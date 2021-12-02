@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import {
+  Button,
   Gallery,
   GalleryItem,
   Page,
   PageSection,
+  EmptyState,
+  EmptyStateIcon,
+  EmptyStateBody,
   Title,
 } from '@patternfly/react-core';
 import { useHistory, useParams } from 'react-router-dom';
@@ -56,6 +60,17 @@ const CategoryDetail = () => {
             </GalleryItem>
           ))}
         </Gallery>
+        <EmptyState>
+          <EmptyStateIcon icon={IconWater} />
+          <Title headingLevel="h4" size="lg">
+            Hygiene category empty.
+          </Title>
+          <EmptyStateBody>
+            You have no gear in this category.
+          </EmptyStateBody>
+          <Button variant="primary">Add gear</Button>
+        </EmptyState>
+
       </PageSection>
     </Page>
   );
