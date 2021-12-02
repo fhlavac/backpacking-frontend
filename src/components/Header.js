@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Masthead, MastheadMain, MastheadBrand, MastheadContent,
 } from '@patternfly/react-core';
+import { Link } from 'react-router-dom';
 import logo from '../assets/images/brand.png';
 import gearList from '../assets/icons/gear-list.svg';
 import backpack from '../assets/icons/my-backpack.svg';
@@ -16,8 +17,16 @@ const Header = () => (
     </MastheadMain>
     <MastheadContent style={{ marginLeft: 'auto' }}>
       <NavLink icon={gearList} name="My Gear" />
-      <NavLink icon={backpack} name="My Backpack" />
+      <Link
+        to="/backpack"
+      >
+        <NavLink
+          icon={backpack}
+          name="My Backpack"
+        />
+      </Link>
     </MastheadContent>
   </Masthead>
 );
+
 export default Header;

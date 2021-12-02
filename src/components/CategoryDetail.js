@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Gallery,
   GalleryItem,
@@ -6,13 +6,13 @@ import {
   PageSection,
   Title,
 } from '@patternfly/react-core';
+import { useHistory, useParams } from 'react-router-dom';
 import GearItem from './GearItem';
 import IconWater from './icons/icon-water';
 import { fetchGearForCategory } from '../api/gear';
-import './Content.scss';
-// import sample from '../assets/images/sample.png';
+import './CategoryDetail.scss';
 
-const Content = () => {
+const CategoryDetail = () => {
   // const gear = [
   //   {
   //     id: 8,
@@ -31,16 +31,16 @@ const Content = () => {
   // ];
 
   const [gear, setGear] = useState([]);
-  const params = useRef((new URL(document.location)).searchParams);
+  const history = useHistory();
+  const { id } = useParams();
 
   useEffect(() => {
-    const categoryId = params.current.get('id');
-    if (categoryId) {
-      fetchGearForCategory(params.current.get('id')).then((data) => setGear(data));
+    if (id) {
+      fetchGearForCategory(id).then((data) => setGear(data));
     } else {
       setGear([]);
     }
-  }, []);
+  }, [history.location]);
 
   return (
     <Page>
@@ -60,4 +60,4 @@ const Content = () => {
     </Page>
   );
 };
-export default Content;
+export default CategoryDetail;
