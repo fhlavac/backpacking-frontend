@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import './category-list.scss';
 import { Link, useLocation } from 'react-router-dom';
 import propTypes from 'prop-types';
-import IconWater from './icons/icon-water';
+// eslint-disable-next-line
+{ /* import IconWater from './icons/icon-water'; */ }
 
 const CategoryList = ({ categories }) => {
   const [activeId, setActiveId] = useState();
@@ -24,7 +25,7 @@ const CategoryList = ({ categories }) => {
               <Link {...props} to={`/category/${id}`} />
             )}
           >
-            <IconWater />
+            { /* <IconWater /> */ }
             {name.charAt(0).toUpperCase() + name.slice(1)}
           </NavItem>
         ))}

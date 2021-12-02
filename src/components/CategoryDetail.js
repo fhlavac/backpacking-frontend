@@ -12,7 +12,7 @@ import {
 } from '@patternfly/react-core';
 import { useHistory, useParams } from 'react-router-dom';
 import GearItem from './GearItem';
-import IconWater from './icons/icon-water';
+import IconHiking from './icons/icon-hiking';
 import { fetchGearForCategory } from '../api/gear';
 import './CategoryDetail.scss';
 
@@ -50,7 +50,6 @@ const CategoryDetail = () => {
     <Page>
       <PageSection className="app-c-page-section">
         <Title headingLevel="h2" size="xl" className="app-c-title pf-u-pb-md">
-          <IconWater />
           Category name
         </Title>
         <Gallery hasGutter>
@@ -61,7 +60,7 @@ const CategoryDetail = () => {
           ))}
         </Gallery>
         <EmptyState>
-          <EmptyStateIcon icon={IconWater} />
+          <EmptyStateIcon icon={IconHiking} />
           <Title headingLevel="h4" size="lg">
             Hygiene category empty.
           </Title>
