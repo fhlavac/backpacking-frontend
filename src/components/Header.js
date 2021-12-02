@@ -18,11 +18,13 @@ const Header = () => (
     <MastheadContent style={{ marginLeft: 'auto' }}>
       <NavLink icon={gearList} name="My Gear" />
       <Link
+        className="c-navLink"
         to="/backpack"
       >
         <NavLink
           icon={backpack}
           name="My Backpack"
+          pathString="backpack"
         />
       </Link>
     </MastheadContent>

@@ -2,8 +2,16 @@
   display: flex;
   align-self: stretch;
   align-items: center;
+  text-decoration: none;
+  color: white;
 
   &:hover {
+    color: #ff8a00;
+    box-shadow: inset 0 -4px #ff8a00;
+    cursor: pointer;
+  }
+
+  &.isActive {
     color: #ff8a00;
     box-shadow: inset 0 -4px #ff8a00;
     cursor: pointer;
