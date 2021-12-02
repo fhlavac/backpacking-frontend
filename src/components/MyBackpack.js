@@ -8,7 +8,7 @@ import {
 import {
   TableComposable, Thead, Tbody, Tr, Th, Td,
 } from '@patternfly/react-table';
-import IconWater from './icons/icon-water';
+import IconSleepingGear from './icons/icon-sleeping-gear';
 import './MyBackpack.scss';
 
 const MyBackpack = () => {
@@ -25,7 +25,7 @@ const MyBackpack = () => {
           My Backpack
         </Title>
         <Title headingLevel="h3" size="l" className="app-c-title pf-u-pb-md">
-          <IconWater />
+          <IconSleepingGear />
           Sleeping Gear
         </Title>
         <TableComposable
