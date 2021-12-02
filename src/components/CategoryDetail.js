@@ -67,7 +67,7 @@ const CategoryDetail = () => {
           <EmptyStateBody>
             You have no gear in this category.
           </EmptyStateBody>
-          <Button variant="disabled">Add gear</Button>
+          <Button variant="primary" onClick={() => history.push('/add-gear')}>Add gear</Button>
         </EmptyState>
 
       </PageSection>
