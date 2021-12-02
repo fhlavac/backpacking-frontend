@@ -20,7 +20,7 @@ const HomeScreen = () => (
         <Grid md={6}>
           <GridItem
             style={{
-              minHeight: '600px',
+              minHeight: '800px',
               backgroundPosition: 'center',
               backgroundSize: 'cover',
               backgroundImage: `url(${image})`,
