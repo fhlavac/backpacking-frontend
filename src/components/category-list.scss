@@ -1,7 +1,7 @@
 .category-list {
     width: 15em;
     background: var(--pf-global--BackgroundColor--dark-300);
-    height: 85vh;
+    height: calc(100vh - 130px);
     svg {
       height: .9em;
       margin-right: 4px;
