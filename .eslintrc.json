@@ -23,6 +23,8 @@
       "react/jsx-filename-extension": "off",
       "react/jsx-props-no-spreading": "off",
       "react/no-unstable-nested-components": "off",
-      "react/require-default-props": "off"
+      "react/require-default-props": "off",
+      "import/prefer-default-export": "off",
+      "default-param-last": "off"
     }
 }
