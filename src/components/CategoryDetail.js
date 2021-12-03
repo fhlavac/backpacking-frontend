@@ -68,7 +68,7 @@ const CategoryDetail = () => {
         ) : (
           <EmptyState>
             <EmptyStateIcon icon={() => <Icon name={category.name} />} />
-            <Title headingLevel="h4" size="lg">
+            <Title headingLevel="h4" size="lg" className="pf-u-mt-lg">
               {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
               {' '}
               category empty.

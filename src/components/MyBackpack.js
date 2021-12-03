@@ -6,6 +6,9 @@ import {
   Title,
   Checkbox,
   Button,
+  EmptyState,
+  EmptyStateIcon,
+  EmptyStateBody,
 } from '@patternfly/react-core';
 import {
   TableComposable, Thead, Tbody, Tr, Th, Td,
@@ -37,7 +40,6 @@ const MyBackpack = () => {
         <Title headingLevel="h2" size="xl" className="app-c-title">
           My Backpack
         </Title>
-
         {
           Object.keys(backpack).map((key) => (backpack[key].length > 0 ? (
             <>
@@ -85,7 +87,20 @@ const MyBackpack = () => {
             </>
           ) : null
           ))
-        }
+          }
+        { !Object.values(backpack).some((value) => value.length > 0)
+          ? (
+            <EmptyState className="pf-u-mt-md">
+              <EmptyStateIcon icon={() => <Icon name="hiking" />} />
+              <Title headingLevel="h4" size="lg" className="pf-u-mt-lg">
+                Your backpack is empty.
+              </Title>
+              <EmptyStateBody>
+                Go to categories and add some gear.
+              </EmptyStateBody>
+            </EmptyState>
+          )
+          : null}
       </PageSection>
     </Page>
   );
