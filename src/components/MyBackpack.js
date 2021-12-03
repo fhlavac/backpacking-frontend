@@ -10,6 +10,7 @@ import {
   EmptyStateIcon,
   EmptyStateBody,
 } from '@patternfly/react-core';
+import { useHistory } from 'react-router-dom';
 import {
   TableComposable, Thead, Tbody, Tr, Th, Td,
 } from '@patternfly/react-table';
@@ -35,6 +36,7 @@ const MyBackpack = () => {
   const { backpack, totalWeight } = useSelector(selector, shallowEqual);
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const removeItem = (gearId) => {
     dispatch({ type: 'REMOVE_FROM_BACKPACK', payload: gearId });
@@ -116,6 +118,7 @@ const MyBackpack = () => {
               <EmptyStateBody>
                 Browse categories and add some gear.
               </EmptyStateBody>
+              <Button variant="primary" onClick={() => history.push('/category/11')}>Browse categories</Button>
             </EmptyState>
           )
           : null}
