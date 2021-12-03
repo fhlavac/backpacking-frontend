@@ -4,7 +4,7 @@ import {
 } from '@patternfly/react-core';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/brand.png';
-import gearList from '../assets/icons/gear-list.svg';
+// import gearList from '../assets/icons/gear-list.svg';
 import backpack from '../assets/icons/my-backpack.svg';
 import NavLink from './NavLink';
 
@@ -16,7 +16,7 @@ const Header = () => (
       </MastheadBrand>
     </MastheadMain>
     <MastheadContent style={{ marginLeft: 'auto' }}>
-      <NavLink icon={gearList} name="My Gear" />
+      { /* <NavLink icon={gearList} name="My Gear" /> */ }
       <Link
         className="c-navLink"
         to="/backpack"
