@@ -22,11 +22,17 @@ import './MyBackpack.scss';
 
 const MyBackpack = () => {
   const columns = ['Packed', null, 'Item', 'Weight', 'Remove'];
-  const selector = ({ backpackGear, categories }) => categories.reduce((acc, curr) => ({
-    ...acc,
-    [curr.name]: backpackGear.filter((gear) => gear.categoryId === curr.id),
-  }), {});
-  const backpack = useSelector(selector, shallowEqual);
+  const selector = ({ backpackGear, categories }) => ({
+    backpack: categories.reduce((acc, curr) => ({
+      ...acc,
+      [curr.name]: backpackGear.filter((gear) => gear.categoryId === curr.id),
+    }), {}),
+    totalWeight: backpackGear.reduce((acc, curr) => {
+      const sum = acc + curr.weight;
+      return sum;
+    }, 0),
+  });
+  const { backpack, totalWeight } = useSelector(selector, shallowEqual);
 
   const dispatch = useDispatch();
 
@@ -40,6 +46,18 @@ const MyBackpack = () => {
         <Title headingLevel="h2" size="xl" className="app-c-title">
           My Backpack
         </Title>
+        { Object.values(backpack).some((value) => value.length > 0)
+          ? (
+            <Title headingLevel="h4" size="md" className="app-c-title">
+              <span className="icon-weight-lg"><IconWeight /></span>
+              <b>
+                {' '}
+                {Math.round(totalWeight * 1000) / 1000}
+                {' '}
+                kg
+              </b>
+            </Title>
+          ) : null}
         {
           Object.keys(backpack).map((key) => (backpack[key].length > 0 ? (
             <>
@@ -96,7 +114,7 @@ const MyBackpack = () => {
                 Your backpack is empty.
               </Title>
               <EmptyStateBody>
-                Go to categories and add some gear.
+                Browse categories and add some gear.
               </EmptyStateBody>
             </EmptyState>
           )
