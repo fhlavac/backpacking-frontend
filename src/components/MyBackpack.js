@@ -32,7 +32,7 @@ const MyBackpack = () => {
   };
 
   return (
-    <Page>
+    <Page className="my-backpack">
       <PageSection className="app-c-page-section">
         <Title headingLevel="h2" size="xl" className="app-c-title">
           My Backpack
@@ -64,7 +64,7 @@ const MyBackpack = () => {
                       <Td>
                         <Checkbox id={`check-${name}`} name={`check-${name}`} />
                       </Td>
-                      <Td><img src={`${API_SERVER_URL}/${imageUrl}`} alt={name} /></Td>
+                      <Td><img src={`${API_SERVER_URL}/${imageUrl || 'sample.png'}`} alt={name} /></Td>
                       <Td>{name}</Td>
                       <Td className="icon-weight">
                         <IconWeight />

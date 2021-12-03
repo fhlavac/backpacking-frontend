@@ -20,4 +20,14 @@
 .button-delete {
   color: gray !important;
 }
-  
+
+.my-backpack {
+  img {
+    max-width: 75px;
+    max-height: 75px;
+  }  
+
+  td {
+    vertical-align: middle !important;
+  }
+}

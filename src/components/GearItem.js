@@ -15,7 +15,7 @@ const GearItem = ({
     <CardTitle headingLevel="h1" size="xl" className="app-c-card-gear-item__title pf-u-text-align-center pf-u-p-md">{item.name}</CardTitle>
     <CardBody className="app-c-card-gear-item__body">
       <Bullseye>
-        <img src={`${API_SERVER_URL}/sample.png`} alt={item.name} />
+        <img src={`${API_SERVER_URL}/${item.imageUrl || 'sample.png'}`} alt={item.name} />
       </Bullseye>
     </CardBody>
     <CardBody className="app-c-card-gear-item__body">
@@ -41,6 +41,7 @@ GearItem.propTypes = {
   item: propTypes.shape({
     id: propTypes.number.isRequired,
     name: propTypes.string.isRequired,
+    imageUrl: propTypes.string,
   }).isRequired,
   onAdd: propTypes.func.isRequired,
   onRemove: propTypes.func.isRequired,
