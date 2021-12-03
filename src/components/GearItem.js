@@ -21,11 +21,16 @@ const GearItem = ({
     <CardBody className="app-c-card-gear-item__body">
       <div className="icon-weight">
         <IconWeight />
-        <b>1690g</b>
+        <b>
+          {' '}
+          {item.weight}
+          {' '}
+          kg
+        </b>
       </div>
-      <p className="description pf-u-text-align-center">
+      {/* <p className="description pf-u-text-align-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
-      </p>
+      </p> */}
     </CardBody>
     <CardFooter className="pf-u-p-xs app-c-card-gear-item__footer">
       { /* TODO - display only appropriate button acccording to redux state */ }
@@ -42,6 +47,7 @@ GearItem.propTypes = {
     id: propTypes.number.isRequired,
     name: propTypes.string.isRequired,
     imageUrl: propTypes.string,
+    weight: propTypes.number.isRequired,
   }).isRequired,
   onAdd: propTypes.func.isRequired,
   onRemove: propTypes.func.isRequired,

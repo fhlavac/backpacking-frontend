@@ -74,7 +74,7 @@ const MyBackpack = () => {
                           {' '}
                           {weight}
                           {' '}
-                          g
+                          kg
                         </b>
                       </Td>
                       <Td>
