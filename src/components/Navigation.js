@@ -8,7 +8,7 @@ import Icon from './icons/icon';
 // eslint-disable-next-line
 { /* import IconWater from './icons/icon-water'; */ }
 
-const CategoryList = ({ categories }) => {
+const Navigation = ({ categories }) => {
   const [activeId, setActiveId] = useState();
   const location = useLocation();
 
@@ -20,11 +20,13 @@ const CategoryList = ({ categories }) => {
     <>
       <Nav>
         <NavList className="category-list">
-          <NavItem>
+          <NavItem
+            isActive={!activeId}
+          >
             <Link
               to="/home-screen"
             >
-              Home
+              <b>Home</b>
             </Link>
           </NavItem>
           {categories.map(({ id, name }) => (
@@ -47,7 +49,7 @@ const CategoryList = ({ categories }) => {
   );
 };
 
-CategoryList.propTypes = {
+Navigation.propTypes = {
   categories: propTypes.arrayOf(
     propTypes.shape({
       id: propTypes.number,
@@ -56,4 +58,4 @@ CategoryList.propTypes = {
   ).isRequired,
 };
 
-export default CategoryList;
+export default Navigation;

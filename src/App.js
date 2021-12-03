@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Header from './components/Header';
-import CategoryList from './components/CategoryList';
+import Navigation from './components/Navigation';
 import CategoryDetail from './components/CategoryDetail';
 import { fetchCategories } from './api/categories';
 import MyBackpack from './components/MyBackpack';
@@ -37,7 +37,7 @@ export default function App() {
             <div className="main-content">
               <Split>
                 <SplitItem className="left-side">
-                  <CategoryList categories={categories} />
+                  <Navigation categories={categories} />
                 </SplitItem>
                 <SplitItem isFilled>
                   <Switch>
