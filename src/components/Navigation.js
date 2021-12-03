@@ -21,7 +21,7 @@ const Navigation = ({ categories }) => {
       <Nav>
         <NavList className="category-list">
           <NavItem
-            isActive={!activeId}
+            isActive={!activeId && location.pathname.includes('home-screen')}
           >
             <Link
               to="/home-screen"
