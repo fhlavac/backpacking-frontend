@@ -52,7 +52,7 @@ export default function App() {
                     <Route path="/add-gear">
                       <AddGear />
                     </Route>
-                    <Route path="/home-screen">
+                    <Route path={['/home-screen', '/']}>
                       <HomeScreen />
                     </Route>
                   </Switch>
