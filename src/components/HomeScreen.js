@@ -45,7 +45,7 @@ const HomeScreen = () => (
               Packing a backpack for a hiking trip is often stressful.
               Especially, when you want to carry the least possible weight on your back.
 
-              This application should serve as a catalog of outdoor equipment,
+              This application provides a catalog of outdoor equipment,
               which will allow you to combine the necessary equipment appropriately to
               both avoid carrying extra weight and forgetting essentials at home.
               <br />
