@@ -6,6 +6,7 @@ import {
 import {
   BrowserRouter as Router, Switch, Route,
 } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Header from './components/Header';
 import CategoryList from './components/CategoryList';
 import CategoryDetail from './components/CategoryDetail';
@@ -16,9 +17,13 @@ import HomeScreen from './components/HomeScreen';
 
 export default function App() {
   const [categories, setCategories] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchCategories().then((data) => setCategories(data));
+    fetchCategories().then((data) => {
+      setCategories(data);
+      dispatch({ type: 'FETCH_CATEGORIES', payload: data });
+    });
   }, []);
 
   return (

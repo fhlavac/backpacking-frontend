@@ -4,6 +4,7 @@ import './category-list.scss';
 import { Link, useLocation } from 'react-router-dom';
 import propTypes from 'prop-types';
 import Footer from './Footer';
+import Icon from './icons/icon';
 // eslint-disable-next-line
 { /* import IconWater from './icons/icon-water'; */ }
 
@@ -34,8 +35,9 @@ const CategoryList = ({ categories }) => {
                 <Link {...props} to={`/category/${id}`} />
               )}
             >
-              { /* <IconWater /> */ }
-              {name.charAt(0).toUpperCase() + name.slice(1)}
+              <Icon name={name} />
+              <span>&nbsp;&nbsp;</span>
+              {`${name.charAt(0).toUpperCase()}${name.slice(1)}`}
             </NavItem>
           ))}
         </NavList>

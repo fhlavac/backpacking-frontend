@@ -13,17 +13,16 @@ import {
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import GearItem from './GearItem';
-import IconHiking from './icons/icon-hiking';
 import { fetchGearForCategory } from '../api/gear';
 import './CategoryDetail.scss';
-
-const selector = (state) => state;
+import Icon from './icons/icon';
 
 const CategoryDetail = () => {
   const [gear, setGear] = useState([]);
   const history = useHistory();
   const { id } = useParams();
-  const state = useSelector(selector, shallowEqual);
+  const selector = ({ categories }) => categories.find((i) => i.id === Number(id));
+  const category = useSelector(selector, shallowEqual) || { name: '' };
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -34,7 +33,7 @@ const CategoryDetail = () => {
     }
   }, [history.location]);
 
-  console.log('state', state);
+  console.log('state', category);
 
   const addItem = (item) => {
     dispatch({ type: 'ADD_TO_BACKPACK', payload: item });
@@ -47,27 +46,32 @@ const CategoryDetail = () => {
   return (
     <Page>
       <PageSection className="app-c-page-section">
-        <Title headingLevel="h2" size="xl" className="app-c-title pf-u-pb-md">
-          Category name
-        </Title>
-        <Gallery hasGutter>
-          { gear.map((item) => (
-            <GalleryItem key={item.id}>
-              <GearItem item={item} onAdd={addItem} onRemove={removeItem} />
-            </GalleryItem>
-          ))}
-        </Gallery>
-        <EmptyState>
-          <EmptyStateIcon icon={IconHiking} />
-          <Title headingLevel="h4" size="lg">
-            Hygiene category empty.
-          </Title>
-          <EmptyStateBody>
-            You have no gear in this category.
-          </EmptyStateBody>
-          <Button variant="primary" onClick={() => history.push('/add-gear')}>Add gear</Button>
-        </EmptyState>
 
+        <Title headingLevel="h2" size="xl" className="app-c-title pf-u-pb-md">
+          {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
+        </Title>
+        { gear.length > 0 ? (
+          <Gallery hasGutter>
+            { gear.map((item) => (
+              <GalleryItem key={item.id}>
+                <GearItem item={item} onAdd={addItem} onRemove={removeItem} />
+              </GalleryItem>
+            ))}
+          </Gallery>
+        ) : (
+          <EmptyState>
+            <EmptyStateIcon icon={() => <Icon name={category.name} />} />
+            <Title headingLevel="h4" size="lg">
+              {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
+              {' '}
+              category empty.
+            </Title>
+            <EmptyStateBody>
+              You have no gear in this category.
+            </EmptyStateBody>
+            <Button variant="primary" onClick={() => history.push('/add-gear')}>Add gear</Button>
+          </EmptyState>
+        )}
       </PageSection>
     </Page>
   );

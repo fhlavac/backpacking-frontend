@@ -1,9 +1,16 @@
 const initialState = {
   backpackGear: [],
+  categories: [],
 };
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
+    case 'FETCH_CATEGORIES': {
+      return {
+        ...state,
+        categories: action.payload || [],
+      };
+    }
     case 'ADD_TO_BACKPACK': {
       return {
         ...state,
