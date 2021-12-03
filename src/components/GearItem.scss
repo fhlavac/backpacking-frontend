@@ -25,5 +25,10 @@
     .button-delete {
       color: gray !important;
     }
+    .button-add {
+      &.pf-m-disabled {
+        color: gray;
+      }
+    }
   }
 }

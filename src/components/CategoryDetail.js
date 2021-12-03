@@ -21,8 +21,12 @@ const CategoryDetail = () => {
   const [gear, setGear] = useState([]);
   const history = useHistory();
   const { id } = useParams();
-  const selector = ({ categories }) => categories.find((i) => i.id === Number(id));
-  const category = useSelector(selector, shallowEqual) || { name: '' };
+  const selector = ({ categories, backpackGear }) => ({
+    category: categories.find((i) => i.id === Number(id)) || { name: '' },
+    backpackGear: backpackGear.map((item) => item.id),
+  });
+
+  const { category, backpackGear } = useSelector(selector, shallowEqual) || { name: '' };
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -52,7 +56,12 @@ const CategoryDetail = () => {
           <Gallery hasGutter>
             { gear.map((item) => (
               <GalleryItem key={item.id}>
-                <GearItem item={item} onAdd={addItem} onRemove={removeItem} />
+                <GearItem
+                  item={item}
+                  onAdd={addItem}
+                  onRemove={removeItem}
+                  isInBackpack={backpackGear.includes(item.id)}
+                />
               </GalleryItem>
             ))}
           </Gallery>

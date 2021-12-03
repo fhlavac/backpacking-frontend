@@ -8,7 +8,9 @@ import { API_SERVER_URL } from '../config/config';
 import IconWeight from './icons/icon-weight';
 import './GearItem.scss';
 
-const GearItem = ({ item, onAdd, onRemove }) => (
+const GearItem = ({
+  item, onAdd, onRemove, isInBackpack,
+}) => (
   <Card className="app-c-card-gear-item">
     <CardTitle headingLevel="h1" size="xl" className="app-c-card-gear-item__title pf-u-text-align-center pf-u-p-md">{item.name}</CardTitle>
     <CardBody className="app-c-card-gear-item__body">
@@ -27,8 +29,10 @@ const GearItem = ({ item, onAdd, onRemove }) => (
     </CardBody>
     <CardFooter className="pf-u-p-xs app-c-card-gear-item__footer">
       { /* TODO - display only appropriate button acccording to redux state */ }
-      <Button variant="link" isSmall onClick={() => onRemove(item.id)} className="button-delete"><TrashIcon /></Button>
-      <Button variant="link" isSmall onClick={() => onAdd(item)} className="pf-u-float-right button-add">Add to backpack</Button>
+      { isInBackpack ? <Button variant="link" isSmall onClick={() => onRemove(item.id)} className="button-delete"><TrashIcon /></Button> : null}
+      <Button variant="link" isDisabled={isInBackpack} isSmall onClick={() => onAdd(item)} className="pf-u-float-right button-add">
+        {isInBackpack ? 'In your backpack' : 'Add to backpack'}
+      </Button>
     </CardFooter>
   </Card>
 );
@@ -40,6 +44,7 @@ GearItem.propTypes = {
   }).isRequired,
   onAdd: propTypes.func.isRequired,
   onRemove: propTypes.func.isRequired,
+  isInBackpack: propTypes.bool.isRequired,
 };
 
 export default GearItem;
