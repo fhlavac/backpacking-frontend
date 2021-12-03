@@ -33,8 +33,6 @@ const CategoryDetail = () => {
     }
   }, [history.location]);
 
-  console.log('state', category);
-
   const addItem = (item) => {
     dispatch({ type: 'ADD_TO_BACKPACK', payload: item });
   };

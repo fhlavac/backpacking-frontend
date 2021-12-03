@@ -1,10 +1,23 @@
 .app-c-page-section {
-    .pf-c-title {
-      color: #4F5255;
-    }
-    .app-c-title svg {
-      padding-right: 6px;
-      height: .9em;
-    }
+  .pf-c-title {
+    color: #4F5255;
   }
+  .app-c-title svg {
+    padding-right: 6px;
+    height: .9em;
+  }
+}
+
+.icon-weight {
+  color: #ff8a00;
+  svg {
+    fill: #ff8a00 ;
+    margin-right: 4px;
+    width: 16px;
+  }
+}
+
+.button-delete {
+  color: gray !important;
+}
   
